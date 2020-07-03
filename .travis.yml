@@ -2,7 +2,7 @@ language: node_js
 node_js: 
   - "12"
 before_install:
-  - openssl aes-256-cbc -K $encrypted_ec0015db4ac4_key -iv $encrypted_ec0015db4ac4_iv -in id_rsa.enc -out ~/.ssh/id_rsa -d
+  - openssl aes-256-cbc -K $encrypted_ec0015db4ac4_key -iv $encrypted_ec0015db4ac4_iv -in id_rsa.enc -out /home/ubuntu/.ssh/id_rsa -d
 install: 
   - npm install
 script: true
