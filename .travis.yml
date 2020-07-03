@@ -1,6 +1,9 @@
 language: node_js
 node_js: 
   - "12"
+addons:
+  ssh_known_hosts:
+  - 54.179.207.218
 before_install:
 - openssl aes-256-cbc -K $encrypted_ec0015db4ac4_key -iv $encrypted_ec0015db4ac4_iv
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
@@ -11,7 +14,5 @@ before_script:
   - echo -e "Host heroku.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script: true
-addons:
-  - 54.179.207.218
 after_success:
   - ssh ubuntu@54.179.207.218 'pm2 reload all'
