@@ -7,6 +7,9 @@ before_install:
 
 install: 
   - npm install
+before_script:
+  - echo -e "Host heroku.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script: true
 after_success:
   - ssh ubuntu@54.179.207.218 'pm2 reload all'
