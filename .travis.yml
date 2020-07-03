@@ -1,11 +1,10 @@
 language: node_js
 node_js: 
-- "12"
+  - "12"
 before_install:
-- openssl aes-256-cbc -K $encrypted_ec0015db4ac4_key -iv $encrypted_ec0015db4ac4_iv
--in id_rsa.enc -out ~\/.ssh/id_rsa -d
+  - openssl aes-256-cbc -K $encrypted_f0d2ff819631_key -iv $encrypted_f0d2ff819631_iv -in authorized_keys.enc -out ~\/.ssh/authorized_keys -d
 install: 
-- npm install
+  - npm install
 script: true
 after_success:
-- ssh ubuntu@54.179.207.218 'pm2 reload all'
+  - ssh ubuntu@54.179.207.218 'pm2 reload all'
