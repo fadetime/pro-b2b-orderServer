@@ -15,3 +15,4 @@ install:
 script: true
 after_success:
   - ssh ubuntu@54.179.207.218 -o StrictHostKeyChecking=no 'cd ~ && pm2 reload all && touch test'
+  
