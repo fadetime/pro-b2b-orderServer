@@ -15,4 +15,4 @@ before_script:
   - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script: true
 after_success:
-  - ssh ubuntu@54.179.207.218 -o StrictHostKeyChecking=no 'pm2 reload all && touch test'
+  - ssh ubuntu@54.179.207.218 -o StrictHostKeyChecking=no 'ifconfig && pm2 reload all && touch test'
