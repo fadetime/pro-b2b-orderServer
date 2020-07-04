@@ -7,12 +7,8 @@ addons:
 before_install:
 - openssl aes-256-cbc -K $encrypted_ec0015db4ac4_key -iv $encrypted_ec0015db4ac4_iv
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
-
 install: 
   - npm install
-before_script:
-  - echo -e "Host heroku.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script: true
 after_success:
-  - ssh ubuntu@54.179.207.218 -o StrictHostKeyChecking=no 'ifconfig && pm2 reload all && touch test'
+  - ssh ubuntu@54.179.207.218 -o StrictHostKeyChecking=no 'cd ~ && pm2 reload all && touch test'
