@@ -14,4 +14,4 @@ install:
   - npm install
 script: true
 after_success:
-  - ssh ubuntu@54.179.207.218 -o StrictHostKeyChecking=no 'cd ~/b2b/test && git clone --depth=50 --branch=master https://github.com/fadetime/pro-b2b-orderServer.git fadetime/pro-b2b-orderServer && mcopy -/ ./fadetime/pro-b2b-orderServer/* ~/b2b/test -n'
+  - ssh ubuntu@54.179.207.218 -o StrictHostKeyChecking=no 'cd ~/test && git clone --depth=50 --branch=master https://github.com/fadetime/pro-b2b-orderServer.git fadetime/pro-b2b-orderServer && mcopy -/ ./fadetime/pro-b2b-orderServer/* ~/test -n'
